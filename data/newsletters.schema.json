@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Glory Newsletter Recommendations",
+  "type": "object",
+  "required": ["items"],
+  "properties": {
+    "updated": { "type": "string", "format": "date" },
+    "items": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/Newsletter" }
+    }
+  },
+  "$defs": {
+    "Newsletter": {
+      "type": "object",
+      "required": ["id", "name", "author", "url", "subscribe_url", "language", "frequency", "topics", "review", "added"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "唯一識別碼，用 kebab-case，例如 raymond-houch"
+        },
+        "name": { "type": "string", "description": "電子報名稱" },
+        "author": { "type": "string", "description": "作者或發行者" },
+        "url": { "type": "string", "format": "uri", "description": "官網或主頁" },
+        "subscribe_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "訂閱連結。若帶 referral 參數，請同時將 has_referral 設為 true"
+        },
+        "platform": {
+          "type": "string",
+          "enum": ["beehiiv", "substack", "convertkit", "ghost", "mailerlite", "self-hosted", "other"]
+        },
+        "language": {
+          "type": "string",
+          "enum": ["zh-Hant", "zh-Hans", "en", "ja", "mixed"]
+        },
+        "frequency": {
+          "type": "string",
+          "enum": ["daily", "weekly", "biweekly", "monthly", "irregular"]
+        },
+        "topics": {
+          "type": "array",
+          "description": "主題標籤，與篩選按鈕對應：design / tech / ai / creator / business",
+          "items": { "type": "string" }
+        },
+        "design_score": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5,
+          "description": "我給的設計與資訊架構分數"
+        },
+        "depth_score": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5,
+          "description": "我給的內容深度分數"
+        },
+        "review": {
+          "type": "string",
+          "description": "我自己寫的推薦理由，2 至 4 句。不可包含原電子報內文。"
+        },
+        "highlight": {
+          "type": "string",
+          "description": "選填的一句話亮點，會顯示在卡片頂部"
+        },
+        "has_referral": {
+          "type": "boolean",
+          "default": false,
+          "description": "訂閱連結是否帶分潤"
+        },
+        "sponsored": {
+          "type": "boolean",
+          "default": false,
+          "description": "是否為付費贊助"
+        },
+        "added": { "type": "string", "format": "date" },
+        "featured": {
+          "type": "boolean",
+          "default": false,
+          "description": "是否為當週主打"
+        },
+        "active": {
+          "type": "boolean",
+          "default": true,
+          "description": "是否仍在榜單；下架時設為 false 並補 retired_reason"
+        },
+        "retired_reason": { "type": "string" }
+      }
+    }
+  }
+}
