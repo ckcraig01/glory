@@ -1,0 +1,45 @@
+{
+  "$schema": "./newsletters.schema.json",
+  "updated": "2026-05-02",
+  "items": [
+    {
+      "id": "example-design-newsletter",
+      "name": "範例電子報名稱",
+      "author": "作者名",
+      "url": "https://example.com",
+      "subscribe_url": "https://example.com/subscribe?ref=glory",
+      "platform": "beehiiv",
+      "language": "zh-Hant",
+      "frequency": "weekly",
+      "topics": ["design", "creator"],
+      "design_score": 5,
+      "depth_score": 4,
+      "review": "在這裡寫你自己對這份電子報的觀察，2 到 4 句即可。重點放在「為什麼值得讀」「你不讀會錯過什麼」「跟同類有什麼不同」。不要轉貼任何原文。",
+      "highlight": "本週主打：作者把資訊架構講得最像散文的一份。",
+      "has_referral": true,
+      "sponsored": false,
+      "added": "2026-05-02",
+      "featured": true,
+      "active": true
+    },
+    {
+      "id": "example-tech-newsletter",
+      "name": "另一份範例",
+      "author": "另一位作者",
+      "url": "https://example.org",
+      "subscribe_url": "https://example.org/subscribe",
+      "platform": "substack",
+      "language": "en",
+      "frequency": "biweekly",
+      "topics": ["tech", "ai"],
+      "design_score": 3,
+      "depth_score": 5,
+      "review": "視覺很素，但每一段都有觀點。如果你受夠了把 Hacker News 翻譯一遍的科技電子報，這份會讓你重新有訂閱的理由。",
+      "has_referral": false,
+      "sponsored": false,
+      "added": "2026-05-02",
+      "featured": false,
+      "active": true
+    }
+  ]
+}

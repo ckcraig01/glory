@@ -1,0 +1,16 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Local notes (not for repo)
+_wiki/private/
+*.local.md
+
+# Build artefacts (站點本身無 build，但保留)
+node_modules/
+dist/

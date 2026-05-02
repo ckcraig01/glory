@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>推薦榜單 — Glory</title>
+<meta name="description" content="本週與歷史推薦的華語電子報榜單。每一份都讀過、都寫了推薦理由。">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="./">Glory</a>
+    <nav>
+      <a href="./recommendations.html" aria-current="page">推薦榜單</a>
+      <a href="./index.html#manifesto">策展宣言</a>
+      <a href="./disclosure.html">揭露聲明</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-head wrap">
+    <p class="eyebrow">推薦榜單</p>
+    <h1>每一份，都是我親自讀過的選擇。</h1>
+    <p class="lede">
+      點擊「前往訂閱」會帶你到該電子報的官方訂閱頁。標示「合作」的條目代表帶有 referral 分潤或贊助關係，詳見
+      <a href="./disclosure.html">揭露聲明</a>。
+    </p>
+
+    <div class="filters" role="toolbar" aria-label="篩選">
+      <button data-filter="all" class="active">全部</button>
+      <button data-filter="design">設計</button>
+      <button data-filter="tech">技術</button>
+      <button data-filter="ai">AI</button>
+      <button data-filter="creator">創作</button>
+      <button data-filter="business">商業</button>
+    </div>
+  </section>
+
+  <section class="grid wrap" id="grid" aria-live="polite">
+    <p class="empty" id="empty">榜單載入中…</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© <span id="year"></span> Glory</p>
+    <p><a href="./disclosure.html">揭露聲明</a> · <a href="https://github.com/ckcraig01/glory">原始碼</a></p>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

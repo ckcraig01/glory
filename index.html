@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glory — 華語電子報觀察與選讀</title>
+<meta name="description" content="一份以設計與技術洞察為標準的華語電子報策展。每週新增一份值得訂閱的清單。">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="alternate" type="application/json" href="data/newsletters.json">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="./">Glory</a>
+    <nav>
+      <a href="./recommendations.html">推薦榜單</a>
+      <a href="#manifesto">策展宣言</a>
+      <a href="./disclosure.html">揭露聲明</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <p class="eyebrow">華語電子報觀察與選讀 · v1</p>
+    <h1>讀什麼，決定你成為什麼樣的人。<br>我用設計與技術的眼睛，幫你篩選每週值得訂閱的電子報。</h1>
+    <p class="lede">
+      每週一份新推薦。沒有 SEO 內容農場，沒有用 AI 生成的清單，沒有未揭露的業配。
+      這裡只有一個讀者一個個讀過、用設計與資訊架構標準衡量過的選擇。
+    </p>
+    <p class="cta-row">
+      <a class="btn primary" href="./recommendations.html">看本週推薦</a>
+      <a class="btn ghost" href="#subscribe">訂閱我的觀察</a>
+    </p>
+  </section>
+
+  <section class="manifesto wrap" id="manifesto">
+    <h2>策展宣言</h2>
+    <p class="manifesto-intro">
+      這是我評斷一份電子報是否值得佔用你週日上午十分鐘的標準。
+      標準會隨時間修訂，但會公開記錄修訂歷史。
+    </p>
+
+    <ol class="principles">
+      <li>
+        <h3>一、品味先於演算法</h3>
+        <p>
+          我不用訂閱數、不用觸及率、不用任何來自平台後台的指標決定推薦順序。
+          一份只有 200 訂閱但每期都讓我重看兩遍的電子報，永遠勝過 5 萬訂閱的轉貼新聞稿。
+        </p>
+      </li>
+      <li>
+        <h3>二、結構即誠意</h3>
+        <p>
+          資訊架構是看得見的尊重。標題層級混亂、CTA 莫名其妙、行高擠在一起的電子報，
+          通常背後也沒有真正想清楚要對誰說話。設計不是裝飾，是作者對讀者時間的態度。
+        </p>
+      </li>
+      <li>
+        <h3>三、技術洞察 &gt; 技術新聞</h3>
+        <p>
+          會被推薦的科技類電子報，必須能講出「為什麼這件事重要」「半年後會變成什麼」，
+          而不是把 Hacker News 翻譯一遍。轉述不創造價值，理解才創造。
+        </p>
+      </li>
+      <li>
+        <h3>四、不轉貼，只導讀</h3>
+        <p>
+          我不會搬運任何電子報的內文。每一則推薦只包含名稱、作者、訂閱連結，
+          以及我自己寫的一段「為什麼值得讀」。價值來自我的眼光，不是別人的字。
+        </p>
+      </li>
+      <li>
+        <h3>五、利益關係必須揭露</h3>
+        <p>
+          如果某則推薦帶有 referral 分潤、贊助合作、或我與作者有私人往來，
+          會在卡片上明確標示。沒有揭露 = 沒有利益關係，這是這個站對自己的硬約束。
+        </p>
+      </li>
+      <li>
+        <h3>六、刪除權保留</h3>
+        <p>
+          推薦過的電子報如果品質明顯下滑，我會把它從榜單拿掉，並在更新日誌裡寫明原因。
+          榜單是動態的，不是名人堂。
+        </p>
+      </li>
+    </ol>
+
+    <p class="manifesto-foot">
+      — 最後修訂於 <time datetime="2026-05-02">2026 年 5 月 2 日</time>
+    </p>
+  </section>
+
+  <section class="subscribe wrap" id="subscribe">
+    <h2>訂閱我的每週觀察</h2>
+    <p>
+      榜單外，我每週寄一封信，深入拆解一份電子報的設計與資訊架構。
+      免費版每月四封，付費版加深度評論與選題卡片盒。
+    </p>
+    <!-- TODO: 把 Beehiiv 或 Substack 訂閱嵌入碼貼在這裡 -->
+    <div class="subscribe-embed">
+      <code>&lt;!-- BEEHIIV_EMBED_HERE --&gt;</code>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© <span id="year"></span> Glory · 一個獨立的華語電子報策展計畫</p>
+    <p><a href="./disclosure.html">揭露聲明</a> · <a href="https://github.com/ckcraig01/glory">原始碼</a></p>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
