@@ -1,0 +1,45 @@
+name: Sync Personal Wiki
+
+on:
+  schedule:
+    - cron: '0 16 * * *'   # 每天台灣時間 00:00（UTC 16:00）
+  workflow_dispatch:         # 也可以在 GitHub UI 手動觸發
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout glory (main)
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
+
+      - name: Clone personal wiki
+        env:
+          WIKI_PAT: ${{ secrets.WIKI_PAT }}
+        run: |
+          git clone https://x-access-token:${WIKI_PAT}@github.com/ckcraig01/llm-wiki-personal /tmp/wiki
+
+      - name: Sync wiki to _wiki/personal/
+        run: |
+          mkdir -p _wiki/personal
+          rsync -av --delete \
+            --exclude='.git' \
+            --exclude='.gitignore' \
+            /tmp/wiki/ _wiki/personal/
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _wiki/personal/
+          if git diff --staged --quiet; then
+            echo "No wiki changes today."
+          else
+            git commit -m "chore(wiki): sync personal wiki $(date +%Y-%m-%d)"
+            git push
+          fi

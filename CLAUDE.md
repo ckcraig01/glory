@@ -17,10 +17,12 @@ Claude 在這個 repo 裡的角色是**助手與草稿員**，不是內容生成
 
 1. `_wiki/voice-guide.md` — Craig 的語氣指南
 2. `_wiki/anti-ai-slop.md` — 必須避開的 AI 味道字眼與句型
-3. 對應的模板：
+3. `_wiki/personal/` — Craig 個人 LLM wiki（每日從 llm-wiki-personal 自動同步）；
+   讀法：先 `ls _wiki/personal/` 了解結構，再挑與當前任務相關的檔案讀
+4. 對應的模板：
    - 推薦卡 → `_wiki/templates/recommendation-card.md`
    - 週深度評論 → `_wiki/templates/deep-review.md`
-4. 評論電子報品質前 → `_wiki/curation-principles.md`
+5. 評論電子報品質前 → `_wiki/curation-principles.md`
 
 如果這些檔案還是空的或缺漏，**停下來告訴 Craig 缺什麼**，不要自行腦補。
 
